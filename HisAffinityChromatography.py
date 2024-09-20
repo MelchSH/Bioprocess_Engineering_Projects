@@ -77,7 +77,7 @@ for step in range(nt):
         Ci = C[i]
         qi = q[i]
         
-        # Compute reaction term
+        # Langmuir main
         reaction = k_on * Ci * (q_max - qi) - k_off * qi
         
         # Update bound concentration
