@@ -16,7 +16,6 @@ Sin = 10
 
 def monod(y,t, F, V, Ks,Kd,mumax,Ysx,Sin):
     X, S = y
-    
     mu = mumax *(S/(Ks+S))
     D = F/V
     dXdt = (mu-D)*X -(X*Kd)
@@ -27,8 +26,6 @@ y0 = [X0,S0]
 sol = odeint(monod,y0,t,args=(F, V, Ks,Kd,mumax,Ysx,Sin))
 Xsol = sol[:,0]
 Ssol = sol[:,1]
-
-print(sol)
 
 fig, ax = plot.subplots()
 plot.plot(t,Xsol,label="Biomass")

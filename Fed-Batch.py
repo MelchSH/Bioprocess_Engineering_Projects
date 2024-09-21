@@ -51,7 +51,11 @@ Ssol = sol.y[1]
 Psol = sol.y[2]
 Vsol = sol.y[3]
 
-plot.figure(1)
+
+plot.figure(figsize=(14,6))
+plot.subplots_adjust(left=0.05,right=0.95)
+plot.subplot(1,2,1)
+
 plot.plot(t, Xsol, label="Biomass (g/L)")
 plot.plot(t, Ssol, label="Substrate (g/L)")
 plot.plot(t, Psol, label="Product (g/L)")
@@ -59,13 +63,13 @@ plot.xlabel("Time (h)")
 plot.ylabel("Concentration")
 plot.legend()
 plot.grid(True)
-plot.title("Fed-batch Bioreactor Simulation")
-plot.show()
+plot.title("Fed-batch Simulation")
 
-
-plot.figure(2)
+plot.subplot(1,2,2)
 plot.plot(t,Vsol,label="Volume (L)")
+plot.title("Volume over time")
 plot.grid(True)
 plot.xlabel("Time (h)")
 plot.ylabel("Volume (L)")
 plot.legend()
+plot.show()
